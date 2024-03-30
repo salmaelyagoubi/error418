@@ -5,19 +5,24 @@ import pandas as pd
 from joblib import load
 import json
 import psycopg2
+from dotenv import load_dotenv
+import os  
 
 # Load your model and imputer
-model = load('./model/model.joblib')
-imputer = load('./model/imputer.joblib')
+model = load('../model/model.joblib')
+imputer = load('../model/imputer.joblib')
 
-# Connect to your PostgreSQL database
+
+load_dotenv()  # Load environment variables from .env file
+
+# Database connection
 conn = psycopg2.connect(
-    host="localhost",
-    database="postgres",
-    user="postgres",
-    password="salma"
+    host=os.getenv("POSTGRES_HOST"),
+    database=os.getenv("POSTGRES_DB"),
+    user=os.getenv("POSTGRES_USER"),
+    password=os.getenv("POSTGRES_PASSWORD")
 )
-cursor = conn.cursor()
+cursor = conn.cursor()  # Ensure cursor is defined here after connection
 
 # Create the predictions table if it does not exist
 create_table_query = """
