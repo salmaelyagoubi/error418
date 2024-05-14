@@ -91,6 +91,7 @@ def past_predictions_page():
             past_predictions_df = pd.DataFrame(past_predictions)
             st.dataframe(past_predictions_df)
 
+
 st.sidebar.title("Navigation 💧")
 choice = st.sidebar.radio("Choose a Page:", ["Prediction Page", "Past Predictions Page"])
 
