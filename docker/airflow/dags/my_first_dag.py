@@ -1,68 +1,102 @@
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
-from airflow.models import Variable
+from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-import shutil
-import random
 import os
-import logging
+import pandas as pd
+import random
+import shutil
+from great_expectations.dataset import PandasDataset
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'start_date': datetime(2021, 1, 1),
+    'email_on_failure': False,
+    'email_on_retry': False,
     'retries': 1,
-    'retry_delay': timedelta(minutes=5),
+    'retry_delay': timedelta(minutes=1),
 }
 
-dag = DAG(
-    'simple_data_ingestion',
+# Directory paths
+raw_data_path = r'C:\Users\salma elyagoubi\error418\raw-data'
+good_data_path = r'C:\Users\salma elyagoubi\error418\good_data'
+bad_data_path = r'C:\Users\salma elyagoubi\error418\bad-data'
+
+# Read data from raw-data folder
+def read_data():
+    files = os.listdir(raw_data_path)
+    selected_file = random.choice(files)
+    file_path = os.path.join(raw_data_path, selected_file)
+    return file_path
+
+# Validate data using Great Expectations
+def validate_data(file_path):
+    df = pd.read_csv(file_path)
+    data = PandasDataset(df)
+    validation_results = data.expect_column_values_to_not_be_null("ph")
+    return validation_results
+
+# Send alerts (placeholder function)
+def send_alerts(file_path, validation_results):
+    if not validation_results['success']:
+        print(f"Alert: Data quality issue found in {file_path}")
+    else:
+        print(f"Data in {file_path} is clean")
+
+# Split and save data
+def split_and_save_data(file_path, validation_results):
+    df = pd.read_csv(file_path)
+    good_df = df[df['ph'].notnull()]
+    bad_df = df[df['ph'].isnull()]
+
+    if not good_df.empty:
+        good_df.to_csv(os.path.join(good_data_path, os.path.basename(file_path)), index=False)
+    if not bad_df.empty:
+        bad_df.to_csv(os.path.join(bad_data_path, os.path.basename(file_path)), index=False)
+
+    os.remove(file_path)
+
+# Save data errors to the database (placeholder function)
+def save_data_errors(validation_results):
+    if not validation_results['success']:
+        print("Saving data issues to the database")
+
+# Define DAG
+with DAG(
+    'data_ingestion',
     default_args=default_args,
     description='A simple data ingestion DAG',
-    schedule_interval=timedelta(days=1),
+    schedule_interval=timedelta(minutes=1),
     catchup=False,
-)
+) as dag:
 
-def read_data(**context):
-    raw_data_folder = Variable.get("raw_data_folder", default_var="C:/Users/salma elyagoubi/error418/raw_data")
-    try:
-        files = os.listdir(raw_data_folder)
-        if not files:
-            raise FileNotFoundError("No files found in the raw_data_folder.")
-        selected_file = random.choice(files)
-        selected_file_path = os.path.join(raw_data_folder, selected_file)
-        logging.info(f"Selected file: {selected_file_path}")
-        return selected_file_path
-    except Exception as e:
-        logging.error(f"Error reading data: {e}")
-        raise
+    read_data_task = PythonOperator(
+        task_id='read_data',
+        python_callable=read_data,
+    )
 
-def save_file(task_instance, **context):
-    file_path = task_instance.xcom_pull(task_ids='read_data')
-    good_data_folder = Variable.get("good_data_folder", default_var="C:/Users/salma elyagoubi/error418/good_data")
-    
-    try:
-        if not os.path.exists(good_data_folder):
-            os.makedirs(good_data_folder)
-        shutil.move(file_path, good_data_folder)
-        logging.info(f"File moved to {good_data_folder}: {file_path}")
-    except Exception as e:
-        logging.error(f"Error saving file: {e}")
-        raise
+    validate_data_task = PythonOperator(
+        task_id='validate_data',
+        python_callable=validate_data,
+        op_args=['{{ ti.xcom_pull(task_ids="read_data") }}'],
+    )
 
-read_data_task = PythonOperator(
-    task_id='read_data',
-    python_callable=read_data,
-    provide_context=True,
-    dag=dag,
-)
+    send_alerts_task = PythonOperator(
+        task_id='send_alerts',
+        python_callable=send_alerts,
+        op_args=['{{ ti.xcom_pull(task_ids="read_data") }}', '{{ ti.xcom_pull(task_ids="validate_data") }}'],
+    )
 
-save_file_task = PythonOperator(
-    task_id='save_file',
-    python_callable=save_file,
-    provide_context=True,
-    dag=dag,
-)
+    split_and_save_data_task = PythonOperator(
+        task_id='split_and_save_data',
+        python_callable=split_and_save_data,
+        op_args=['{{ ti.xcom_pull(task_ids="read_data") }}', '{{ ti.xcom_pull(task_ids="validate_data") }}'],
+    )
 
-read_data_task >> save_file_task
+    save_data_errors_task = PythonOperator(
+        task_id='save_data_errors',
+        python_callable=save_data_errors,
+        op_args=['{{ ti.xcom_pull(task_ids="validate_data") }}'],
+    )
 
+    read_data_task >> validate_data_task >> [send_alerts_task, split_and_save_data_task, save_data_errors_task]
