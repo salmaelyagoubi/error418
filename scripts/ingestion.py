@@ -6,7 +6,7 @@ df = pd.read_csv('C:/Users/salma elyagoubi/error418/data/water_potability_with_e
 output_folder = 'raw_data'
 os.makedirs(output_folder, exist_ok=True)
 
-rows_per_file = 1000
+rows_per_file = 10
 
 for i in range(0, len(df), rows_per_file):
     df_subset = df.iloc[i:i + rows_per_file]
