@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException,Request
 from pydantic import BaseModel
 from typing import List
 import pandas as pd
@@ -7,6 +7,7 @@ import json
 import psycopg2
 from dotenv import load_dotenv
 import os
+from datetime import datetime
 
 # Load models and environment variables
 model = load('../model/model.joblib')
@@ -65,15 +66,53 @@ def predict(input_data: List[PredictionInput]):
     return {"received_data": [item.dict() for item in input_data], "prediction": ["Bad quality" if pred == 0 else "Good quality" for pred in prediction_list]}
 
 @app.post('/get-past-predictions')
-def get_past_predictions():
-    select_query = "SELECT * FROM predictions"
-    cursor.execute(select_query)
-    past_predictions = cursor.fetchall()
+async def get_past_predictions(request: Request):
+    payload = await request.json()
+    print('Payload:', payload)
+    
+    try:
+        start_date = datetime.strptime(payload.get("start_date"), "%Y-%m-%d")
+        end_date = datetime.strptime(payload.get("end_date"), "%Y-%m-%d")
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD.")
+    
+    if end_date < start_date:
+        raise HTTPException(status_code=400, detail="End date cannot be earlier than start date.")
+    
+    source = payload.get("source")
+    valid_sources = ["scheduled", "webapp", "all"]
+    
+    if source not in valid_sources:
+        raise HTTPException(status_code=400, detail=f"Invalid source. Valid sources are: {', '.join(valid_sources)}")
+    
+    select_query = """
+        SELECT * FROM predictions 
+        WHERE timestamp >= %s AND timestamp <= %s
+    """
+    
+    query_params = [start_date, end_date]
+
+    # Add condition for source if it's not 'all'
+    if source != 'all':
+        select_query += " AND input_features->>'source' = %s"
+        query_params.append(source)
+    
+    print('Constructed Query:', select_query)
+    print('Query Params:', query_params)
+    
+    try:
+        cursor.execute(select_query, tuple(query_params))
+        past_predictions = cursor.fetchall()
+    except psycopg2.Error as e:
+        raise HTTPException(status_code=500, detail=f"Database error: {e.pgerror}")
+    
     past_predictions_list = []
     for prediction in past_predictions:
         past_predictions_list.append({
             "input_features": prediction[1],
             "prediction": "Bad quality" if prediction[2] == 0 else "Good quality",
-            "timestamp": prediction[3].isoformat()  # Format the timestamp for readability
+            "timestamp": prediction[3].isoformat() 
         })
+    
+    print("Fetched Predictions List:", past_predictions_list)
     return past_predictions_list
