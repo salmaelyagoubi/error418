@@ -1,0 +1,577 @@
+[2024-05-17T20:13:32.781+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T20:13:32.826+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T20:13:32.839+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T20:13:32.842+0000] {taskinstance.py:2306} INFO - Starting attempt 26 of 26
+[2024-05-17T20:13:32.865+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 12:31:17.083416+00:00
+[2024-05-17T20:13:32.877+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=8363) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T20:13:32.880+0000] {standard_task_runner.py:63} INFO - Started process 8377 to run task
+[2024-05-17T20:13:32.879+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T12:31:17.083416+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpk_4um40h']
+[2024-05-17T20:13:32.881+0000] {standard_task_runner.py:91} INFO - Job 51: Subtask validate_data
+[2024-05-17T20:13:32.951+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [running]> on host e512d0910ba5
+[2024-05-17T20:13:33.095+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T12:31:17.083416+00:00' AIRFLOW_CTX_TRY_NUMBER='26' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T12:31:17.083416+00:00'
+[2024-05-17T20:13:33.097+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T20:13:33.131+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_2.csv
+[2024-05-17T20:13:33.132+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_2
+[2024-05-17T20:13:33.217+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T20:13:33.303+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T20:13:33.348+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T20:13:33.994+0000] {data_asset.py:541} INFO - 	20 expectation(s) included in expectation_suite.
+[2024-05-17T20:13:34.068+0000] {logging_mixin.py:188} INFO - validation_results: {
+  "success": false,
+  "results": [
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "ph",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 162,
+        "missing_percent": 16.2,
+        "unexpected_count": 838,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_total": 83.8,
+        "unexpected_percent_nonmissing": 100.0,
+        "partial_unexpected_list": [
+          "6.64884918609138",
+          "9.323583858284508",
+          "4.58196872788087",
+          "7.884841993204571",
+          "6.168838539281275",
+          "7.230845306553176",
+          "8.693104326309328",
+          "-999.0",
+          "4.79746018165997",
+          "9.319176393077573",
+          "7.58168757744945",
+          "5.348213658597068",
+          "5.487876362610197",
+          "8.31595907145097",
+          "8.55107774771961",
+          "6.013160966461117",
+          "5.744067537432683",
+          "5.218989651481935",
+          "7.4587076827919985",
+          "11.0278798626952"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "ph",
+          "min_value": 0,
+          "max_value": 14
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "TypeError: Column values, min_value, and max_value must either be None or of the same type.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 1227, in expect_column_values_to_be_between\n    return min_comparator(temp_column) & max_comparator(temp_column)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 1210, in new_comparator\n    return comparator(value, comparison_value)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/ops/common.py\", line 76, in new_method\n    return method(self, other)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/arraylike.py\", line 60, in __ge__\n    return self._cmp_method(other, operator.ge)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/series.py\", line 5803, in _cmp_method\n    res_values = ops.comparison_op(lvalues, rvalues, op)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/ops/array_ops.py\", line 346, in comparison_op\n    res_values = comp_method_OBJECT_ARRAY(op, lvalues, rvalues)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/ops/array_ops.py\", line 131, in comp_method_OBJECT_ARRAY\n    result = libops.scalar_compare(x.ravel(), y, op)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"ops.pyx\", line 107, in pandas._libs.ops.scalar_compare\nTypeError: '>=' not supported between instances of 'str' and 'int'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 111, in inner_wrapper\n    boolean_mapped_success_values = func(self, nonnull_values, *args, **kwargs)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 1231, in expect_column_values_to_be_between\n    raise TypeError(\nTypeError: Column values, min_value, and max_value must either be None or of the same type.\n"
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Hardness",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Hardness",
+          "min_value": 0,
+          "max_value": 1000
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 8,
+        "missing_percent": 0.8,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Solids",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Solids",
+          "min_value": 0,
+          "max_value": 50000
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 5,
+        "missing_percent": 0.5,
+        "unexpected_count": 5,
+        "unexpected_percent": 0.5025125628140703,
+        "unexpected_percent_total": 0.5,
+        "unexpected_percent_nonmissing": 0.5025125628140703,
+        "partial_unexpected_list": [
+          56867.85923615444,
+          55334.70279929284,
+          56351.39630372492,
+          56488.67241273919,
+          50279.262429338494
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Chloramines",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3791, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 152, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 181, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Chloramines'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 820, in validate\n    result = expectation_method(\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/util.py\", line 78, in f\n    return self.mthd(obj, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 716, in expect_column_values_to_be_of_type\n    self[column].dtype != \"object\"\n    ~~~~^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/frame.py\", line 3893, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3798, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Chloramines'\n",
+        "exception_message": "'Chloramines'"
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Chloramines",
+          "min_value": 0,
+          "max_value": 10
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "KeyError: 'Chloramines'",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3791, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 152, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 181, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Chloramines'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 81, in inner_wrapper\n    series = data[column]\n             ~~~~^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/frame.py\", line 3893, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3798, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Chloramines'\n"
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Sulfate",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Sulfate",
+          "min_value": 0,
+          "max_value": 500
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 233,
+        "missing_percent": 23.3,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Conductivity",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Conductivity",
+          "min_value": 0,
+          "max_value": 2000
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 14,
+        "missing_percent": 1.4000000000000001,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "min_value": 0,
+          "max_value": 20
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 11,
+        "missing_percent": 1.0999999999999999,
+        "unexpected_count": 42,
+        "unexpected_percent": 4.246713852376137,
+        "unexpected_percent_total": 4.2,
+        "unexpected_percent_nonmissing": 4.246713852376137,
+        "partial_unexpected_list": [
+          22.091990222757488,
+          22.159747227563287,
+          23.952450435917456,
+          21.340849260481207,
+          20.605552070757085,
+          21.430293301706968,
+          20.05761944433556,
+          20.222074873529778,
+          20.93935932951388,
+          20.2244258107807,
+          20.53968804883607,
+          20.76898639142246,
+          21.81315970022024,
+          20.60357441803194,
+          22.89101080761469,
+          20.52319058445346,
+          20.92910323589649,
+          23.13595214354791,
+          22.763707419363584,
+          21.52059303321176
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "min_value": 0,
+          "max_value": 120
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 52,
+        "missing_percent": 5.2,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Turbidity",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Turbidity",
+          "min_value": 0,
+          "max_value": 10
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 3,
+        "missing_percent": 0.3,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "Potability",
+          "type_": "int"
+        },
+        "meta": {}
+      },
+      "result": {
+        "observed_value": "float64"
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "column": "Potability",
+          "value_set": [
+            0,
+            1
+          ]
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 6,
+        "missing_percent": 0.6,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    }
+  ],
+  "evaluation_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 20,
+    "successful_expectations": 13,
+    "unsuccessful_expectations": 7,
+    "success_percent": 65.0
+  },
+  "meta": {
+    "great_expectations_version": "0.18.13",
+    "expectation_suite_name": "water_potability_suite",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-05-17T20:13:33.992525+00:00"
+    },
+    "batch_kwargs": {
+      "ge_batch_id": "efe91ce4-1489-11ef-8751-0242c0a88003"
+    },
+    "batch_markers": {},
+    "batch_parameters": {},
+    "validation_time": "20240517T201333.992147Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.12"
+    }
+  }
+}
+[2024-05-17T20:13:34.133+0000] {logging_mixin.py:188} INFO - /opt/***/dags/raw-data/data_part_2.csv is bad data
+[2024-05-17T20:13:34.188+0000] {logging_mixin.py:188} INFO - Bad data saved at /opt/***/dags/bad-data/data_part_2.csv
+[2024-05-17T20:13:34.190+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-17T20:13:34.191+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T20:13:34.208+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T12:31:17.083416+00:00, execution_date=20240517T123117, start_date=20240517T201332, end_date=20240517T201334
+[2024-05-17T20:13:34.261+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-17T20:13:34.310+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T20:13:34.314+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

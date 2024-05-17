@@ -1,0 +1,412 @@
+[2024-05-17T17:16:58.734+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T17:16:58.785+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T17:16:58.800+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T17:16:58.803+0000] {taskinstance.py:2306} INFO - Starting attempt 10 of 10
+[2024-05-17T17:16:58.824+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 12:31:17.083416+00:00
+[2024-05-17T17:16:58.834+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3575) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T17:16:58.836+0000] {standard_task_runner.py:63} INFO - Started process 3585 to run task
+[2024-05-17T17:16:58.836+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T12:31:17.083416+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpg7lwaejj']
+[2024-05-17T17:16:58.839+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask validate_data
+[2024-05-17T17:16:58.912+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [running]> on host e512d0910ba5
+[2024-05-17T17:16:59.030+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T12:31:17.083416+00:00' AIRFLOW_CTX_TRY_NUMBER='10' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T12:31:17.083416+00:00'
+[2024-05-17T17:16:59.031+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T17:16:59.064+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_8.csv
+[2024-05-17T17:16:59.065+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_8
+[2024-05-17T17:16:59.150+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T17:16:59.221+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T17:16:59.247+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T17:16:59.896+0000] {data_asset.py:541} INFO - 	10 expectation(s) included in expectation_suite.
+[2024-05-17T17:16:59.964+0000] {logging_mixin.py:188} INFO - validation_results: {
+  "success": false,
+  "results": [
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "ph",
+          "min_value": 0,
+          "max_value": 14
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "TypeError: Column values, min_value, and max_value must either be None or of the same type.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 1227, in expect_column_values_to_be_between\n    return min_comparator(temp_column) & max_comparator(temp_column)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 1210, in new_comparator\n    return comparator(value, comparison_value)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/ops/common.py\", line 76, in new_method\n    return method(self, other)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/arraylike.py\", line 60, in __ge__\n    return self._cmp_method(other, operator.ge)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/series.py\", line 5803, in _cmp_method\n    res_values = ops.comparison_op(lvalues, rvalues, op)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/ops/array_ops.py\", line 346, in comparison_op\n    res_values = comp_method_OBJECT_ARRAY(op, lvalues, rvalues)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/ops/array_ops.py\", line 131, in comp_method_OBJECT_ARRAY\n    result = libops.scalar_compare(x.ravel(), y, op)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"ops.pyx\", line 107, in pandas._libs.ops.scalar_compare\nTypeError: '>=' not supported between instances of 'str' and 'int'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 111, in inner_wrapper\n    boolean_mapped_success_values = func(self, nonnull_values, *args, **kwargs)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 1231, in expect_column_values_to_be_between\n    raise TypeError(\nTypeError: Column values, min_value, and max_value must either be None or of the same type.\n"
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Hardness",
+          "min_value": 0,
+          "max_value": 1000
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 15,
+        "missing_percent": 1.5,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Solids",
+          "min_value": 0,
+          "max_value": 50000
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 10,
+        "missing_percent": 1.0,
+        "unexpected_count": 6,
+        "unexpected_percent": 0.6060606060606061,
+        "unexpected_percent_total": 0.6,
+        "unexpected_percent_nonmissing": 0.6060606060606061,
+        "partial_unexpected_list": [
+          51731.82055324112,
+          50279.262429338494,
+          55334.70279929284,
+          56320.586979158514,
+          52318.91729758968,
+          50793.898916874045
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Chloramines",
+          "min_value": 0,
+          "max_value": 10
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "KeyError: 'Chloramines'",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3791, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 152, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 181, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Chloramines'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 81, in inner_wrapper\n    series = data[column]\n             ~~~~^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/frame.py\", line 3893, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3798, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Chloramines'\n"
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Sulfate",
+          "min_value": 0,
+          "max_value": 500
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 270,
+        "missing_percent": 27.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Conductivity",
+          "min_value": 0,
+          "max_value": 2000
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 5,
+        "missing_percent": 0.5,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "min_value": 0,
+          "max_value": 20
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 5,
+        "missing_percent": 0.5,
+        "unexpected_count": 45,
+        "unexpected_percent": 4.522613065326634,
+        "unexpected_percent_total": 4.5,
+        "unexpected_percent_nonmissing": 4.522613065326634,
+        "partial_unexpected_list": [
+          21.97715822373516,
+          20.421472044556765,
+          21.145954462369048,
+          21.52059303321176,
+          22.13995837761616,
+          21.142052798710267,
+          20.76898639142246,
+          21.917376989820298,
+          22.6868367426506,
+          21.233978373962657,
+          21.940189616356463,
+          20.278989743745623,
+          23.13595214354791,
+          20.92910323589649,
+          20.81134247599164,
+          21.22812723710723,
+          22.50467943991441,
+          20.2244258107807,
+          22.89101080761469,
+          22.6868367426506
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "min_value": 0,
+          "max_value": 120
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 58,
+        "missing_percent": 5.800000000000001,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Turbidity",
+          "min_value": 0,
+          "max_value": 10
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 15,
+        "missing_percent": 1.5,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "column": "Potability",
+          "value_set": [
+            0,
+            1
+          ]
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 1000,
+        "missing_count": 13,
+        "missing_percent": 1.3,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    }
+  ],
+  "evaluation_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 10,
+    "successful_expectations": 6,
+    "unsuccessful_expectations": 4,
+    "success_percent": 60.0
+  },
+  "meta": {
+    "great_expectations_version": "0.18.13",
+    "expectation_suite_name": "water_potability_suite",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-05-17T17:16:59.895153+00:00"
+    },
+    "batch_kwargs": {
+      "ge_batch_id": "45565b06-1471-11ef-ae64-0242c0a88003"
+    },
+    "batch_markers": {},
+    "batch_parameters": {},
+    "validation_time": "20240517T171659.894741Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.12"
+    }
+  }
+}
+[2024-05-17T17:16:59.982+0000] {xcom.py:675} ERROR - Object of type ExpectationSuiteValidationResult is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-05-17T17:16:59.987+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T17:16:59.989+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 189, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'great_expectations.core.expectation_validation_result.ExpectationSuiteValidationResult'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 67, in validate_data
+    kwargs["ti"].xcom_push(key="validation_results", value=validation_results)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ExpectationSuiteValidationResult is not JSON serializable
+[2024-05-17T17:17:00.019+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T12:31:17.083416+00:00, execution_date=20240517T123117, start_date=20240517T171658, end_date=20240517T171700
+[2024-05-17T17:17:00.042+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 16 for task validate_data (Object of type ExpectationSuiteValidationResult is not JSON serializable; 3585)
+[2024-05-17T17:17:00.058+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T17:17:00.096+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T17:17:00.102+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

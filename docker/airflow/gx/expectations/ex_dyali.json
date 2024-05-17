@@ -1,84 +1,15 @@
 {
   "data_asset_type": "Dataset",
-  "expectation_suite_name": "water_potability_suite",
+  "expectation_suite_name": "ex_dyali",
   "expectations": [
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "ph",
-        "min_value": 0,
-        "max_value": 14
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Hardness",
-        "min_value": 0,
-        "max_value": 1000
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Solids",
-        "min_value": 0,
-        "max_value": 50000
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Chloramines",
-        "min_value": 0,
-        "max_value": 10
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Sulfate",
-        "min_value": 0,
-        "max_value": 500
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Conductivity",
-        "min_value": 0,
-        "max_value": 2000
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Organic_carbon",
-        "min_value": 0,
-        "max_value": 20
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Trihalomethanes",
-        "min_value": 0,
-        "max_value": 120
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "Turbidity",
-        "min_value": 0,
-        "max_value": 10
-      }
-    },
     {
       "expectation_type": "expect_column_values_to_be_in_set",
       "kwargs": {
         "column": "Potability",
-        "value_set": [0, 1]
+        "value_set": [
+          0,
+          1
+        ]
       }
     }
   ],

@@ -9,7 +9,9 @@ import requests
 import json
 from datetime import datetime
 from great_expectations.dataset.pandas_dataset import PandasDataset
+from great_expectations.core.batch import Batch
 from great_expectations.data_context.data_context import DataContext
+from great_expectations.validator.validator import Validator
 from airflow.operators.python import BranchPythonOperator
 import asyncpg
 import os
@@ -35,6 +37,7 @@ dag_folder = os.path.dirname(os.path.abspath(__file__))
 RAW_DATA_PATH = os.path.join(dag_folder, 'raw-data')
 good_data_path = os.path.join(dag_folder, 'good-data')
 bad_data_path = os.path.join(dag_folder, 'bad-data')
+ge_directory = os.path.abspath(os.path.join(dag_folder, '..', 'gx'))
 
 def read_data(**kwargs):
     files = [file for file in os.listdir(RAW_DATA_PATH) if file.endswith('.csv')]
@@ -63,8 +66,11 @@ def validate_data(**kwargs):
     validation_results = ge_df.validate()
     print('validation_results:', validation_results)
 
+    # Convert validation results to JSON serializable dictionary
+    validation_results_dict = validation_results.to_json_dict()
+
     run_id = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    kwargs["ti"].xcom_push(key="validation_results", value=validation_results)
+    kwargs["ti"].xcom_push(key="validation_results", value=json.dumps(validation_results_dict))
     kwargs["ti"].xcom_push(key="run_id", value=run_id)
 
     if validation_results["success"]:
@@ -77,13 +83,14 @@ def validate_data(**kwargs):
         df.to_csv(bad_file_path, index=False)
         print(f"Bad data saved at {bad_file_path}")
 
+
 def decide_which_path(**kwargs):
     ti = kwargs["ti"]
     data_quality = ti.xcom_pull(task_ids="validate_data", key="data_quality")
     if data_quality == "good_data":
         return "save_file"
     else:
-        return ["send_alerts", "save_data_errors", "save_file"]
+        return [ "save_file"]
 
 def send_alerts(**kwargs):
     validation_results = kwargs["ti"].xcom_pull(key="validation_results", task_ids="validate_data")
@@ -315,13 +322,13 @@ branch_task = BranchPythonOperator(
     dag=dag,
 )
 
-send_alerts_task = PythonOperator(
-    task_id="send_alerts",
-    python_callable=send_alerts,
-    provide_context=True,
-    dag=dag,
-    trigger_rule="all_success",
-)
+# send_alerts_task = PythonOperator(
+#     task_id="send_alerts",
+#     python_callable=send_alerts,
+#     provide_context=True,
+#     dag=dag,
+#     trigger_rule="all_success",
+# )
 
 save_file_task = PythonOperator(
     task_id="save_file",
@@ -330,15 +337,15 @@ save_file_task = PythonOperator(
     dag=dag,
 )
 
-save_data_errors_task = PythonOperator(
-    task_id="save_data_errors",
-    python_callable=save_data_errors,
-    provide_context=True,
-    dag=dag,
-    trigger_rule="all_success",
-)
+# save_data_errors_task = PythonOperator(
+#     task_id="save_data_errors",
+#     python_callable=save_data_errors,
+#     provide_context=True,
+#     dag=dag,
+#     trigger_rule="all_success",
+# )
 
 read_data_task >> validate_data_task >> branch_task
 branch_task >> save_file_task
-branch_task >> send_alerts_task
-branch_task >> save_data_errors_task
+# branch_task >> send_alerts_task
+# branch_task >> save_data_errors_task

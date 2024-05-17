@@ -1,0 +1,59 @@
+[2024-05-17T11:47:12.291+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T11:47:12.339+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T11:30:28.713644+00:00 [queued]>
+[2024-05-17T11:47:12.353+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T11:30:28.713644+00:00 [queued]>
+[2024-05-17T11:47:12.356+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2024-05-17T11:47:12.381+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 11:30:28.713644+00:00
+[2024-05-17T11:47:12.390+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1413) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T11:47:12.393+0000] {standard_task_runner.py:63} INFO - Started process 1423 to run task
+[2024-05-17T11:47:12.394+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T11:30:28.713644+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmp9ldf0l9f']
+[2024-05-17T11:47:12.396+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask validate_data
+[2024-05-17T11:47:12.495+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T11:30:28.713644+00:00 [running]> on host 11a40e6e6344
+[2024-05-17T11:47:12.655+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T11:30:28.713644+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T11:30:28.713644+00:00'
+[2024-05-17T11:47:12.656+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T11:47:12.698+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_10.csv
+[2024-05-17T11:47:12.699+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_10
+[2024-05-17T11:47:12.783+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T11:47:12.878+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:225: UserWarning: Warning. An existing `great_expectations.yml` was found here: /opt/***/gx.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T11:47:12.880+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:235: UserWarning: Warning. An existing `config_variables.yml` was found here: /opt/***/gx/uncommitted.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T11:47:12.891+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T11:47:12.921+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T11:47:13.049+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T11:47:13.049+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 59, in validate_data
+    expectation_suite = context.get_expectation_suite(expectation_suite_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 3033, in get_expectation_suite
+    raise gx_exceptions.DataContextError(
+great_expectations.exceptions.exceptions.DataContextError: expectation_suite ex_dyali not found
+[2024-05-17T11:47:13.064+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T11:30:28.713644+00:00, execution_date=20240517T113028, start_date=20240517T114712, end_date=20240517T114713
+[2024-05-17T11:47:13.081+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 12 for task validate_data (expectation_suite ex_dyali not found; 1423)
+[2024-05-17T11:47:13.132+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T11:47:13.167+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T11:47:13.174+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
