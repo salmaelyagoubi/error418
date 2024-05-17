@@ -1,0 +1,755 @@
+[2024-05-17T00:00:01.627+0000] {processor.py:161} INFO - Started process (PID=2897) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:01.628+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:00:01.630+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:01.629+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:07.768+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.768+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:00:07.774+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.774+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:00:07.776+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.776+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:00:07.778+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.778+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:00:07.780+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.779+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:00:07.788+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:07.837+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.836+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:00:07.891+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:07.891+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:00:07.935+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.315 seconds
+[2024-05-17T00:00:13.093+0000] {processor.py:161} INFO - Started process (PID=2920) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:13.094+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:00:13.095+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:13.095+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:18.701+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.701+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:00:18.717+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.717+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:00:18.734+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.733+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:00:18.764+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.763+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:00:18.766+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.766+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:00:18.780+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:18.834+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.834+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:00:18.900+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:18.900+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:00:18.936+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.851 seconds
+[2024-05-17T00:00:49.306+0000] {processor.py:161} INFO - Started process (PID=2960) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:49.308+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:00:49.309+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:49.309+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:54.449+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.449+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:00:54.452+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.452+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:00:54.453+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.453+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:00:54.454+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.454+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:00:54.455+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.455+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:00:54.461+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:00:54.494+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.493+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:00:54.524+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:00:54.523+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:00:54.552+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.252 seconds
+[2024-05-17T00:01:25.053+0000] {processor.py:161} INFO - Started process (PID=2994) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:25.054+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:01:25.056+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:25.055+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:30.994+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:30.994+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:01:30.996+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:30.996+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:01:30.998+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:30.997+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:01:30.999+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:30.999+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:01:31.000+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:31.000+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:01:31.006+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:31.039+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:31.039+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:01:31.071+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:31.070+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:01:31.103+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.059 seconds
+[2024-05-17T00:01:56.564+0000] {processor.py:161} INFO - Started process (PID=3028) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:56.565+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:01:56.567+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:56.566+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:56.593+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:56.592+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/data-ingestion-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 39
+    GE_DIRECTORY = os.path.join(dag_folder, '''gx')
+                                            ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 322)
+[2024-05-17T00:01:56.594+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:56.614+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 0.058 seconds
+[2024-05-17T00:01:58.612+0000] {processor.py:161} INFO - Started process (PID=3033) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:01:58.613+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:01:58.615+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:01:58.614+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:02:06.160+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.159+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:02:06.163+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.163+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:02:06.165+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.164+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:02:06.166+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.166+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:02:06.168+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.168+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:02:06.184+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:02:06.244+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.243+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:02:06.291+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:06.290+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:02:06.336+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.732 seconds
+[2024-05-17T00:02:37.082+0000] {processor.py:161} INFO - Started process (PID=3080) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:02:37.084+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:02:37.086+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:37.085+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:02:42.588+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.587+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:02:42.589+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.589+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:02:42.591+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.590+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:02:42.592+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.591+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:02:42.592+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.592+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:02:42.598+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:02:42.629+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.629+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:02:42.661+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:02:42.660+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:02:42.692+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.618 seconds
+[2024-05-17T00:03:12.885+0000] {processor.py:161} INFO - Started process (PID=3123) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:03:12.886+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:03:12.888+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:12.887+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:03:17.221+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.221+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:03:17.224+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.223+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:03:17.225+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.224+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:03:17.226+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.226+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:03:17.227+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.227+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:03:17.232+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:03:17.260+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.260+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:03:17.285+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:17.284+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:03:17.307+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 4.429 seconds
+[2024-05-17T00:03:47.458+0000] {processor.py:161} INFO - Started process (PID=3157) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:03:47.460+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:03:47.462+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:47.461+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:03:52.498+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.498+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:277: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:03:52.501+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.500+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:03:52.502+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.501+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:296: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:03:52.502+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.502+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:03:52.503+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.503+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:311: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:03:52.508+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:03:52.535+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.535+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:03:52.575+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:03:52.575+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:03:52.605+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.156 seconds
+[2024-05-17T00:04:04.656+0000] {processor.py:161} INFO - Started process (PID=3189) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:04.657+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:04:04.659+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:04.659+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:09.617+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.617+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:304: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:04:09.620+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.619+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:04:09.621+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.621+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:323: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:04:09.623+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.622+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:331: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:04:09.624+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.624+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:338: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:04:09.632+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:09.671+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.671+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:04:09.709+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:09.709+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:04:09.760+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.113 seconds
+[2024-05-17T00:04:14.907+0000] {processor.py:161} INFO - Started process (PID=3205) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:14.908+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:04:14.909+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:14.909+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:19.443+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.443+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:04:19.445+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.445+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:04:19.447+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.446+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:04:19.448+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.447+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:04:19.449+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.448+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:04:19.457+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:19.494+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.494+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:04:19.527+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:19.527+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:04:19.561+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 4.661 seconds
+[2024-05-17T00:04:20.677+0000] {processor.py:161} INFO - Started process (PID=3225) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:20.679+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:04:20.681+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:20.680+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:26.243+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.243+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:04:26.246+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.245+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:04:26.247+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.247+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:04:26.248+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.248+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:04:26.249+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.249+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:04:26.258+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:26.296+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.296+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:04:26.332+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:26.332+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:04:26.368+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.701 seconds
+[2024-05-17T00:04:56.536+0000] {processor.py:161} INFO - Started process (PID=3281) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:04:56.539+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:04:56.540+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:04:56.540+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:05:00.764+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.763+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:05:00.766+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.765+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:05:00.766+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.766+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:05:00.767+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.767+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:05:00.768+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.768+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:05:00.774+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:05:00.802+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.802+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:05:00.828+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:00.828+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:05:00.851+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 4.323 seconds
+[2024-05-17T00:05:31.328+0000] {processor.py:161} INFO - Started process (PID=3315) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:05:31.333+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:05:31.339+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:31.336+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:05:36.284+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.284+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:05:36.286+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.286+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:05:36.287+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.287+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:05:36.288+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.288+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:05:36.290+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.289+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:05:36.299+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:05:36.334+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.334+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:05:36.367+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:05:36.367+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:05:36.405+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.103 seconds
+[2024-05-17T00:06:06.883+0000] {processor.py:161} INFO - Started process (PID=3349) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:06.885+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:06:06.887+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:06.887+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:11.287+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.287+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:06:11.289+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.289+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:06:11.290+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.290+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:06:11.291+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.291+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:06:11.292+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.291+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:06:11.298+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:11.324+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.324+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:06:11.355+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:11.355+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:06:11.393+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 4.523 seconds
+[2024-05-17T00:06:14.541+0000] {processor.py:161} INFO - Started process (PID=3363) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:14.545+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:06:14.547+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:14.547+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:19.995+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:19.995+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T00:06:19.997+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:19.997+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T00:06:19.998+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:19.998+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T00:06:19.999+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:19.999+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T00:06:20.000+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:20.000+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T00:06:20.008+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:20.038+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:20.038+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T00:06:20.068+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:20.068+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T00:06:20.102+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.572 seconds
+[2024-05-17T00:06:52.612+0000] {processor.py:161} INFO - Started process (PID=3414) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T00:06:52.614+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T00:06:52.616+0000] {logging_mixin.py:188} INFO - [2024-05-17T00:06:52.615+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:38:22.732+0000] {processor.py:161} INFO - Started process (PID=3458) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:38:22.872+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:38:22.876+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:38:22.875+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:38:52.799+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:38:52.797+0000] {timeout.py:68} ERROR - Process timed out, PID: 3458
+[2024-05-17T08:39:23.066+0000] {processor.py:161} INFO - Started process (PID=3502) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:39:23.067+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:39:23.068+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:23.068+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:39:31.551+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.550+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:39:31.557+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.557+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:39:31.560+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.559+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:39:31.562+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.561+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:39:31.563+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.563+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:39:31.567+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:39:31.869+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.869+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:39:31.920+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:39:31.920+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:39:31.962+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 8.907 seconds
+[2024-05-17T08:40:02.506+0000] {processor.py:161} INFO - Started process (PID=3536) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:02.508+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:40:02.515+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:02.511+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:08.832+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.831+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:40:08.833+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.833+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:40:08.834+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.834+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:40:08.835+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.835+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:40:08.836+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.836+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:40:08.848+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:08.901+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.901+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:40:08.924+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:08.924+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:40:08.982+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.483 seconds
+[2024-05-17T08:40:20.797+0000] {processor.py:161} INFO - Started process (PID=3566) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:20.799+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:40:20.801+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:20.801+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:27.332+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.331+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:40:27.336+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.335+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:40:27.339+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.338+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:40:27.341+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.341+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:40:27.343+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.343+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:40:27.348+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:27.407+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.407+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:40:27.438+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:27.437+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:40:27.470+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.696 seconds
+[2024-05-17T08:40:44.915+0000] {processor.py:161} INFO - Started process (PID=3598) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:44.917+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:40:44.919+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:44.918+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:53.695+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.694+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:40:53.698+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.697+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:40:53.699+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.699+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:40:53.700+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.700+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:40:53.702+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.702+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:40:53.705+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:53.746+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.746+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:40:53.790+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:53.789+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:40:53.843+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 8.946 seconds
+[2024-05-17T08:40:54.768+0000] {processor.py:161} INFO - Started process (PID=3614) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:40:54.769+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:40:54.771+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:40:54.770+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:41:02.088+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.087+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:41:02.092+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.092+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:41:02.096+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.095+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:41:02.099+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.098+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:41:02.102+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.102+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:41:02.106+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:41:02.152+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.151+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:41:02.223+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:02.222+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:41:02.273+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.513 seconds
+[2024-05-17T08:41:32.760+0000] {processor.py:161} INFO - Started process (PID=3659) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:41:32.762+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:41:32.765+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:32.764+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:41:38.126+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.126+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:41:38.127+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.127+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:41:38.128+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.128+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:41:38.129+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.129+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:41:38.130+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.130+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:41:38.131+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:41:38.156+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.156+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:41:38.175+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:41:38.175+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:41:38.196+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.451 seconds
+[2024-05-17T08:42:08.666+0000] {processor.py:161} INFO - Started process (PID=3699) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:42:08.668+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:42:08.669+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:08.669+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:42:13.784+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.784+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:42:13.787+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.787+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:42:13.789+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.789+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:42:13.791+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.791+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:42:13.793+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.792+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:42:13.797+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:42:13.836+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.836+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:42:13.857+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:13.857+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:42:13.887+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.233 seconds
+[2024-05-17T08:42:44.366+0000] {processor.py:161} INFO - Started process (PID=3733) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:42:44.368+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:42:44.369+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:44.369+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:42:48.879+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.879+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:42:48.881+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.881+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:42:48.882+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.882+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:42:48.883+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.883+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:42:48.884+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.884+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:42:48.886+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:42:48.909+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.909+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:42:48.929+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:42:48.929+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:42:48.972+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 4.614 seconds
+[2024-05-17T08:43:19.561+0000] {processor.py:161} INFO - Started process (PID=3767) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:43:19.563+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:43:19.564+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:19.564+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:43:24.067+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.066+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:43:24.068+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.068+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:43:24.069+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.069+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:43:24.070+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.070+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:43:24.071+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.071+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:43:24.073+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:43:24.099+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.098+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:43:24.121+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:24.120+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:43:24.152+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 4.598 seconds
+[2024-05-17T08:43:54.481+0000] {processor.py:161} INFO - Started process (PID=3801) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:43:54.484+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:43:54.487+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:43:54.486+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:44:00.996+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:00.996+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:300: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:44:00.999+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:00.999+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:44:01.000+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:01.000+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:319: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:44:01.002+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:01.001+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:327: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:44:01.004+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:01.003+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:334: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:44:01.007+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:44:01.050+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:01.049+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:44:01.084+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:01.084+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:44:01.115+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.660 seconds
+[2024-05-17T08:44:21.039+0000] {processor.py:161} INFO - Started process (PID=3835) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:44:21.041+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:44:21.043+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:21.042+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:44:26.533+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.533+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:44:26.535+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.535+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:44:26.536+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.535+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:44:26.537+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.536+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:44:26.538+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.538+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:44:26.541+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:44:26.569+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.569+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:44:26.593+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:26.592+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:44:26.619+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.588 seconds
+[2024-05-17T08:44:56.772+0000] {processor.py:161} INFO - Started process (PID=3869) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:44:56.773+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:44:56.775+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:44:56.774+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:45:02.731+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.731+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:45:02.735+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.734+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:45:02.737+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.737+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:45:02.739+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.739+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:45:02.741+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.741+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:45:02.744+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:45:02.791+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.790+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:45:02.825+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:02.825+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:45:02.858+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.091 seconds
+[2024-05-17T08:45:33.376+0000] {processor.py:161} INFO - Started process (PID=3903) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:45:33.377+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:45:33.379+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:33.378+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:45:38.782+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.782+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:45:38.784+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.784+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:45:38.785+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.785+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:45:38.786+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.785+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:45:38.786+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.786+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:45:38.789+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:45:38.838+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.838+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:45:38.870+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:45:38.870+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:45:38.922+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.554 seconds
+[2024-05-17T08:46:09.110+0000] {processor.py:161} INFO - Started process (PID=3943) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:46:09.112+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:46:09.115+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:09.114+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:46:14.337+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.337+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:46:14.339+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.339+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:46:14.340+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.340+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:46:14.341+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.341+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:46:14.342+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.342+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:46:14.344+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:46:14.369+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.369+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:46:14.389+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:14.388+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:46:14.409+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.308 seconds
+[2024-05-17T08:46:44.950+0000] {processor.py:161} INFO - Started process (PID=3977) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:46:44.953+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:46:44.955+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:44.954+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:46:49.975+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:49.975+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:46:49.978+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:49.978+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:46:49.980+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:49.980+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:46:49.982+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:49.981+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:46:49.983+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:49.983+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:46:49.987+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:46:50.016+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:50.016+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:46:50.036+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:46:50.035+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:46:50.055+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 5.120 seconds
+[2024-05-17T08:48:05.282+0000] {processor.py:161} INFO - Started process (PID=165) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:48:05.284+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:48:05.288+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:05.287+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:48:13.922+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:13.922+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:48:13.924+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:13.924+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:48:13.925+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:13.925+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:48:13.926+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:13.926+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:48:13.927+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:13.927+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:48:13.958+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:48:14.264+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:14.264+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:48:14.301+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:14.301+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:48:14.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 9.062 seconds
+[2024-05-17T08:48:44.718+0000] {processor.py:161} INFO - Started process (PID=205) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:48:44.720+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:48:44.723+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:44.722+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:48:51.783+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.783+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:48:51.796+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.795+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:48:51.800+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.799+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:48:51.802+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.802+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:48:51.805+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.804+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:48:51.817+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:48:51.866+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.866+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:48:51.910+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:48:51.910+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:48:51.945+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.238 seconds
+[2024-05-17T08:49:22.242+0000] {processor.py:161} INFO - Started process (PID=239) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:49:22.244+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:49:22.246+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:22.246+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:49:29.598+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.597+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:49:29.602+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.601+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:49:29.604+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.603+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:49:29.605+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.605+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:49:29.607+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.607+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:49:29.616+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:49:29.647+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.646+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:49:29.703+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:49:29.703+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:49:29.743+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.511 seconds
+[2024-05-17T08:50:00.087+0000] {processor.py:161} INFO - Started process (PID=273) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:50:00.088+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:50:00.090+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:00.089+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:50:07.644+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.643+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:50:07.650+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.649+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:50:07.654+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.653+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:50:07.657+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.656+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:50:07.660+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.660+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:50:07.681+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:50:07.771+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.770+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:50:07.812+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:07.811+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:50:07.845+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.765 seconds
+[2024-05-17T08:50:38.060+0000] {processor.py:161} INFO - Started process (PID=307) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:50:38.061+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:50:38.065+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:38.064+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:50:45.071+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.070+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:50:45.075+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.075+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:50:45.078+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.077+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:50:45.080+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.079+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:50:45.081+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.081+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:50:45.093+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:50:45.153+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.153+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:50:45.189+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:50:45.189+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:50:45.230+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.180 seconds
+[2024-05-17T08:51:15.452+0000] {processor.py:161} INFO - Started process (PID=348) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:51:15.454+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:51:15.456+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:15.455+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:51:23.921+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:23.920+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:51:23.925+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:23.925+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:51:23.932+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:23.931+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:51:23.935+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:23.934+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:51:23.941+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:23.941+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:51:23.960+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:51:24.035+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:24.034+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:51:24.080+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:24.080+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:51:24.119+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 8.673 seconds
+[2024-05-17T08:51:54.712+0000] {processor.py:161} INFO - Started process (PID=392) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:51:54.714+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:51:54.716+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:51:54.716+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:52:02.711+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.710+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:52:02.715+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.714+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:52:02.716+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.716+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:52:02.718+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.718+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:52:02.720+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.719+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:52:02.729+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:52:02.773+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.773+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:52:02.814+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:02.814+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:52:02.845+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 8.143 seconds
+[2024-05-17T08:52:33.173+0000] {processor.py:161} INFO - Started process (PID=438) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:52:33.176+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:52:33.189+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:33.188+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:52:40.718+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.718+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:52:40.722+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.721+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:52:40.724+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.723+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:52:40.726+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.726+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:52:40.728+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.728+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:52:40.735+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:52:40.771+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.770+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:52:40.805+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:52:40.805+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:52:40.834+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 7.668 seconds
+[2024-05-17T08:53:11.376+0000] {processor.py:161} INFO - Started process (PID=472) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:53:11.377+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:53:11.379+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:11.379+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:53:17.417+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.416+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:53:17.419+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.418+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:53:17.420+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.420+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:53:17.421+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.421+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:53:17.422+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.422+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:53:17.428+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:53:17.456+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.456+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:53:17.483+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:17.482+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:53:17.506+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.139 seconds
+[2024-05-17T08:53:47.947+0000] {processor.py:161} INFO - Started process (PID=513) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:53:47.948+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:53:47.950+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:47.950+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:53:53.957+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:53.956+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:53:53.961+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:53.960+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:53:53.963+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:53.962+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:53:53.965+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:53.964+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:53:53.966+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:53.966+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:53:53.982+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:53:54.039+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:54.038+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:53:54.086+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:53:54.085+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:53:54.129+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.189 seconds
+[2024-05-17T08:54:24.475+0000] {processor.py:161} INFO - Started process (PID=547) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:54:24.476+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:54:24.478+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:24.478+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:54:34.017+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.017+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:54:34.020+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.020+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:54:34.022+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.021+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:54:34.027+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.025+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:54:34.037+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.036+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:54:34.052+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:54:34.086+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.086+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:54:34.110+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:54:34.109+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:54:34.159+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 9.690 seconds
+[2024-05-17T08:55:04.336+0000] {processor.py:161} INFO - Started process (PID=581) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:55:04.338+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:55:04.341+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:04.340+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:55:10.994+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:10.994+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:55:10.998+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:10.998+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:55:11.000+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:11.000+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:55:11.001+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:11.001+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:55:11.002+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:11.002+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:55:11.010+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:55:11.039+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:11.039+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:55:11.100+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:11.100+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:55:11.132+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.810 seconds
+[2024-05-17T08:55:41.604+0000] {processor.py:161} INFO - Started process (PID=615) to work on /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:55:41.606+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data-ingestion-dag.py for tasks to queue
+[2024-05-17T08:55:41.608+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:41.608+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:55:47.685+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.685+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:299: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  read_data_task = PythonOperator(
+[2024-05-17T08:55:47.687+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.687+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py:484: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  result = func(self, **kwargs, default_args=default_args)
+[2024-05-17T08:55:47.688+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.688+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:318: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  send_alerts_task = PythonOperator(
+[2024-05-17T08:55:47.689+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.689+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:326: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_file_task = PythonOperator(
+[2024-05-17T08:55:47.690+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.690+0000] {warnings.py:110} WARNING - /opt/airflow/dags/data-ingestion-dag.py:333: RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+  save_data_errors_task = PythonOperator(
+[2024-05-17T08:55:47.696+0000] {processor.py:840} INFO - DAG(s) 'data_ingestion_pipelines_2' retrieved from /opt/airflow/dags/data-ingestion-dag.py
+[2024-05-17T08:55:47.725+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.725+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-17T08:55:47.751+0000] {logging_mixin.py:188} INFO - [2024-05-17T08:55:47.750+0000] {dag.py:3954} INFO - Setting next_dagrun for data_ingestion_pipelines_2 to 2024-05-17 00:00:00+00:00, run_after=2024-05-18 00:00:00+00:00
+[2024-05-17T08:55:47.785+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data-ingestion-dag.py took 6.190 seconds
