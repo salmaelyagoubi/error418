@@ -1,0 +1,65 @@
+[2024-05-17T20:50:13.016+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T20:50:13.059+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T20:50:13.071+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T20:50:13.085+0000] {taskinstance.py:2306} INFO - Starting attempt 35 of 35
+[2024-05-17T20:50:13.110+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 12:31:17.083416+00:00
+[2024-05-17T20:50:13.122+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=11001) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T20:50:13.124+0000] {standard_task_runner.py:63} INFO - Started process 11011 to run task
+[2024-05-17T20:50:13.124+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T12:31:17.083416+00:00', '--job-id', '90', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpdmoylkap']
+[2024-05-17T20:50:13.126+0000] {standard_task_runner.py:91} INFO - Job 90: Subtask validate_data
+[2024-05-17T20:50:13.185+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [running]> on host e512d0910ba5
+[2024-05-17T20:50:13.294+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T12:31:17.083416+00:00' AIRFLOW_CTX_TRY_NUMBER='35' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T12:31:17.083416+00:00'
+[2024-05-17T20:50:13.295+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T20:50:13.321+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T20:50:13.322+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T20:50:13.331+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T20:50:13.332+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "parsers.pyx", line 1160, in pandas._libs.parsers.TextReader._convert_tokens
+TypeError: Cannot cast array data from dtype('O') to dtype('float64') according to the rule 'safe'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 72, in validate_data
+    df = pd.read_csv(file_path, dtype=dtype)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 617, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1748, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 843, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 920, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 1065, in pandas._libs.parsers.TextReader._convert_column_data
+  File "parsers.pyx", line 1166, in pandas._libs.parsers.TextReader._convert_tokens
+ValueError: could not convert string to float: 'INVALID'
+[2024-05-17T20:50:13.346+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T12:31:17.083416+00:00, execution_date=20240517T123117, start_date=20240517T205013, end_date=20240517T205013
+[2024-05-17T20:50:13.362+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 90 for task validate_data (could not convert string to float: 'INVALID'; 11011)
+[2024-05-17T20:50:13.380+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T20:50:13.409+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T20:50:13.414+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

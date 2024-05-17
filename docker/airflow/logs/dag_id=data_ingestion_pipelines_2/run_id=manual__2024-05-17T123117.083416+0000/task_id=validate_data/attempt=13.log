@@ -1,0 +1,49 @@
+[2024-05-17T19:20:26.659+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T19:20:26.719+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T19:20:26.734+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T19:20:26.735+0000] {taskinstance.py:2306} INFO - Starting attempt 13 of 13
+[2024-05-17T19:20:26.755+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 12:31:17.083416+00:00
+[2024-05-17T19:20:26.768+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4840) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T19:20:26.770+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T12:31:17.083416+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmp9dgqbn5x']
+[2024-05-17T19:20:26.771+0000] {standard_task_runner.py:63} INFO - Started process 4861 to run task
+[2024-05-17T19:20:26.772+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask validate_data
+[2024-05-17T19:20:26.847+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [running]> on host e512d0910ba5
+[2024-05-17T19:20:26.971+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T12:31:17.083416+00:00' AIRFLOW_CTX_TRY_NUMBER='13' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T12:31:17.083416+00:00'
+[2024-05-17T19:20:26.973+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T19:20:27.021+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_2.csv
+[2024-05-17T19:20:27.022+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_2
+[2024-05-17T19:20:27.097+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T19:20:27.171+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T19:20:27.205+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T19:20:27.769+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T19:20:27.770+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 62, in validate_data
+    batch = context.get_batch(batch_kwargs, expectation_suite_name)
+            ^^^^^^^^^^^^^^^^^
+AttributeError: 'FileDataContext' object has no attribute 'get_batch'. Did you mean: '_get_batch_v2'?
+[2024-05-17T19:20:27.794+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T12:31:17.083416+00:00, execution_date=20240517T123117, start_date=20240517T192026, end_date=20240517T192027
+[2024-05-17T19:20:27.820+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 20 for task validate_data ('FileDataContext' object has no attribute 'get_batch'; 4861)
+[2024-05-17T19:20:27.871+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T19:20:27.922+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T19:20:27.930+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -60,3 +60,304 @@ great_expectations.exceptions.exceptions.ConfigNotFoundError: Error: No gx direc
 [2024-05-17T00:04:39.121+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
 [2024-05-17T00:04:39.166+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
 [2024-05-17T00:04:39.176+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T11:30:46.750+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T11:30:46.806+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T11:30:46.826+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T11:30:46.826+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-17T11:30:46.847+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-16 00:00:00+00:00
+[2024-05-17T11:30:46.861+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=336) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T11:30:46.865+0000] {standard_task_runner.py:63} INFO - Started process 356 to run task
+[2024-05-17T11:30:46.864+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-16T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpisky5pl7']
+[2024-05-17T11:30:46.867+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask validate_data
+[2024-05-17T11:30:46.944+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [running]> on host 11a40e6e6344
+[2024-05-17T11:30:47.076+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-16T00:00:00+00:00'
+[2024-05-17T11:30:47.077+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T11:30:47.112+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T11:30:47.113+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T11:30:47.190+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T11:30:47.302+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:225: UserWarning: Warning. An existing `great_expectations.yml` was found here: /opt/***/gx.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T11:30:47.305+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:235: UserWarning: Warning. An existing `config_variables.yml` was found here: /opt/***/gx/uncommitted.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T11:30:47.315+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T11:30:47.347+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T11:30:47.487+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T11:30:47.488+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 59, in validate_data
+    expectation_suite = context.get_expectation_suite(expectation_suite_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 3033, in get_expectation_suite
+    raise gx_exceptions.DataContextError(
+great_expectations.exceptions.exceptions.DataContextError: expectation_suite ex_dyali not found
+[2024-05-17T11:30:47.504+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-16T00:00:00+00:00, execution_date=20240516T000000, start_date=20240517T113046, end_date=20240517T113047
+[2024-05-17T11:30:47.523+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 8 for task validate_data (expectation_suite ex_dyali not found; 356)
+[2024-05-17T11:30:47.563+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T11:30:47.600+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T11:30:47.608+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T12:01:08.838+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T12:01:08.881+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:01:08.894+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:01:08.895+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-17T12:01:08.913+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-16 00:00:00+00:00
+[2024-05-17T12:01:08.927+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=330) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T12:01:08.929+0000] {standard_task_runner.py:63} INFO - Started process 350 to run task
+[2024-05-17T12:01:08.930+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-16T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmp_9ug0z5a']
+[2024-05-17T12:01:08.932+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask validate_data
+[2024-05-17T12:01:08.999+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [running]> on host 153dc65a744d
+[2024-05-17T12:01:09.124+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-16T00:00:00+00:00'
+[2024-05-17T12:01:09.126+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T12:01:09.162+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T12:01:09.163+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T12:01:09.179+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T12:01:09.180+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/file_data_context.py", line 198, in _load_file_backed_project_config
+    with open(path_to_yml) as data:
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/great_expectations/great_expectations.yml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 57, in validate_data
+    context = DataContext(context_root_dir=GE_DIRECTORY)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/data_context.py", line 129, in DataContext
+    project_config = FileDataContext._load_file_backed_project_config(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/file_data_context.py", line 210, in _load_file_backed_project_config
+    raise gx_exceptions.ConfigNotFoundError()
+great_expectations.exceptions.exceptions.ConfigNotFoundError: Error: No gx directory was found here!
+    - Please check that you are in the correct directory or have specified the correct directory.
+    - If you have never run Great Expectations in this project, please run `great_expectations init` to get started.
+
+[2024-05-17T12:01:09.193+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-16T00:00:00+00:00, execution_date=20240516T000000, start_date=20240517T120108, end_date=20240517T120109
+[2024-05-17T12:01:09.208+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task validate_data (Error: No gx directory was found here!
+    - Please check that you are in the correct directory or have specified the correct directory.
+    - If you have never run Great Expectations in this project, please run `great_expectations init` to get started.
+; 350)
+[2024-05-17T12:01:09.225+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T12:01:09.258+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T12:01:09.263+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T12:06:38.723+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T12:06:38.771+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:06:38.786+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:06:38.787+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-17T12:06:38.809+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-16 00:00:00+00:00
+[2024-05-17T12:06:38.820+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=296) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T12:06:38.823+0000] {standard_task_runner.py:63} INFO - Started process 315 to run task
+[2024-05-17T12:06:38.823+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-16T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpq3yerzdy']
+[2024-05-17T12:06:38.825+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask validate_data
+[2024-05-17T12:06:38.905+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [running]> on host baf2bcf863ea
+[2024-05-17T12:06:39.030+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-16T00:00:00+00:00'
+[2024-05-17T12:06:39.032+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T12:06:39.073+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_5.csv
+[2024-05-17T12:06:39.074+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_5
+[2024-05-17T12:06:39.139+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T12:06:39.228+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:225: UserWarning: Warning. An existing `great_expectations.yml` was found here: /opt/***/gx.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T12:06:39.229+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:235: UserWarning: Warning. An existing `config_variables.yml` was found here: /opt/***/gx/uncommitted.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T12:06:39.238+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T12:06:39.265+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T12:06:39.375+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T12:06:39.376+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 59, in validate_data
+    expectation_suite = context.get_expectation_suite(expectation_suite_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 3033, in get_expectation_suite
+    raise gx_exceptions.DataContextError(
+great_expectations.exceptions.exceptions.DataContextError: expectation_suite ex_dyali not found
+[2024-05-17T12:06:39.390+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-16T00:00:00+00:00, execution_date=20240516T000000, start_date=20240517T120638, end_date=20240517T120639
+[2024-05-17T12:06:39.406+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task validate_data (expectation_suite ex_dyali not found; 315)
+[2024-05-17T12:06:39.441+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T12:06:39.474+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T12:06:39.481+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T12:21:04.029+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T12:21:04.079+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:21:04.093+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:21:04.094+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-17T12:21:04.114+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-16 00:00:00+00:00
+[2024-05-17T12:21:04.124+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=262) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T12:21:04.127+0000] {standard_task_runner.py:63} INFO - Started process 281 to run task
+[2024-05-17T12:21:04.127+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-16T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpngbm3s21']
+[2024-05-17T12:21:04.128+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask validate_data
+[2024-05-17T12:21:04.205+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [running]> on host fc17bb5b1792
+[2024-05-17T12:21:04.330+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-16T00:00:00+00:00'
+[2024-05-17T12:21:04.332+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T12:21:04.366+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T12:21:04.367+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T12:21:04.435+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T12:21:04.510+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:225: UserWarning: Warning. An existing `great_expectations.yml` was found here: /opt/***/gx.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T12:21:04.512+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/serializable_data_context.py:235: UserWarning: Warning. An existing `config_variables.yml` was found here: /opt/***/gx/uncommitted.
+    - No action was taken.
+  warnings.warn(message)
+
+[2024-05-17T12:21:04.521+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T12:21:04.551+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T12:21:04.674+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T12:21:04.675+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 60, in validate_data
+    expectation_suite = context.get_expectation_suite(expectation_suite_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 3033, in get_expectation_suite
+    raise gx_exceptions.DataContextError(
+great_expectations.exceptions.exceptions.DataContextError: expectation_suite ex_dyali not found
+[2024-05-17T12:21:04.691+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-16T00:00:00+00:00, execution_date=20240516T000000, start_date=20240517T122104, end_date=20240517T122104
+[2024-05-17T12:21:04.711+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task validate_data (expectation_suite ex_dyali not found; 281)
+[2024-05-17T12:21:04.745+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T12:21:04.787+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T12:21:04.793+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-17T12:31:32.881+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T12:31:32.928+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:31:32.944+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [queued]>
+[2024-05-17T12:31:32.945+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-17T12:31:32.965+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-16 00:00:00+00:00
+[2024-05-17T12:31:32.976+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=262) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T12:31:32.978+0000] {standard_task_runner.py:63} INFO - Started process 283 to run task
+[2024-05-17T12:31:32.978+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-16T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmput1ek2w_']
+[2024-05-17T12:31:32.980+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask validate_data
+[2024-05-17T12:31:33.053+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-16T00:00:00+00:00 [running]> on host e512d0910ba5
+[2024-05-17T12:31:33.272+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-16T00:00:00+00:00'
+[2024-05-17T12:31:33.274+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T12:31:33.318+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T12:31:33.320+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T12:31:33.340+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T12:31:33.341+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/file_data_context.py", line 198, in _load_file_backed_project_config
+    with open(path_to_yml) as data:
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/gx/great_expectations.yml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/data-ingestion-dag.py", line 59, in validate_data
+    context = DataContext(context_root_dir=GE_DIRECTORY)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/data_context.py", line 129, in DataContext
+    project_config = FileDataContext._load_file_backed_project_config(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/file_data_context.py", line 210, in _load_file_backed_project_config
+    raise gx_exceptions.ConfigNotFoundError()
+great_expectations.exceptions.exceptions.ConfigNotFoundError: Error: No gx directory was found here!
+    - Please check that you are in the correct directory or have specified the correct directory.
+    - If you have never run Great Expectations in this project, please run `great_expectations init` to get started.
+
+[2024-05-17T12:31:33.358+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-16T00:00:00+00:00, execution_date=20240516T000000, start_date=20240517T123132, end_date=20240517T123133
+[2024-05-17T12:31:33.378+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 6 for task validate_data (Error: No gx directory was found here!
+    - Please check that you are in the correct directory or have specified the correct directory.
+    - If you have never run Great Expectations in this project, please run `great_expectations init` to get started.
+; 283)
+[2024-05-17T12:31:33.395+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-17T12:31:33.442+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T12:31:33.448+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

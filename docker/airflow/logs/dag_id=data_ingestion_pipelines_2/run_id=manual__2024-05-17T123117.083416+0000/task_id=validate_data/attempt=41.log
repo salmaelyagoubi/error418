@@ -1,0 +1,128 @@
+[2024-05-17T21:06:35.351+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T21:06:35.404+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T21:06:35.418+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T21:06:35.421+0000] {taskinstance.py:2306} INFO - Starting attempt 41 of 41
+[2024-05-17T21:06:35.440+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 12:31:17.083416+00:00
+[2024-05-17T21:06:35.451+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=12175) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T21:06:35.454+0000] {standard_task_runner.py:63} INFO - Started process 12189 to run task
+[2024-05-17T21:06:35.454+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T12:31:17.083416+00:00', '--job-id', '104', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmp9a9tbfeh']
+[2024-05-17T21:06:35.455+0000] {standard_task_runner.py:91} INFO - Job 104: Subtask validate_data
+[2024-05-17T21:06:35.522+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [running]> on host e512d0910ba5
+[2024-05-17T21:06:35.649+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T12:31:17.083416+00:00' AIRFLOW_CTX_TRY_NUMBER='41' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T12:31:17.083416+00:00'
+[2024-05-17T21:06:35.650+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T21:06:35.687+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T21:06:35.688+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T21:06:35.752+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T21:06:35.814+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T21:06:35.844+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T21:06:36.426+0000] {data_asset.py:541} INFO - 	2 expectation(s) included in expectation_suite.
+[2024-05-17T21:06:36.440+0000] {logging_mixin.py:188} INFO - validation_results: {
+  "success": false,
+  "results": [
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "ph",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 14,
+        "missing_count": 3,
+        "missing_percent": 21.428571428571427,
+        "unexpected_count": 1,
+        "unexpected_percent": 9.090909090909092,
+        "unexpected_percent_total": 7.142857142857142,
+        "unexpected_percent_nonmissing": 9.090909090909092,
+        "partial_unexpected_list": [
+          "INVALID"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_of_type",
+        "kwargs": {
+          "column": "ph",
+          "type_": "float"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 14,
+        "missing_count": 3,
+        "missing_percent": 21.428571428571427,
+        "unexpected_count": 11,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_total": 78.57142857142857,
+        "unexpected_percent_nonmissing": 100.0,
+        "partial_unexpected_list": [
+          "3.71608007538699",
+          "8.099124189298397",
+          "8.316765884214679",
+          "9.092223456290965",
+          "5.584086638456089",
+          "10.223862164528772",
+          "8.635848718500734",
+          "11.180284470721592",
+          "INVALID",
+          "7.974521648923869",
+          "7.119824384264552"
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    }
+  ],
+  "evaluation_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 2,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 2,
+    "success_percent": 0.0
+  },
+  "meta": {
+    "great_expectations_version": "0.18.13",
+    "expectation_suite_name": "water_potability_suite",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-05-17T21:06:36.425904+00:00"
+    },
+    "batch_kwargs": {
+      "ge_batch_id": "58ca416e-1491-11ef-898f-0242c0a88003"
+    },
+    "batch_markers": {},
+    "batch_parameters": {},
+    "validation_time": "20240517T210636.425517Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.12"
+    }
+  }
+}
+[2024-05-17T21:06:36.485+0000] {logging_mixin.py:188} INFO - /opt/***/dags/raw-data/data_part_1.csv is bad data
+[2024-05-17T21:06:36.520+0000] {logging_mixin.py:188} INFO - Bad data saved at /opt/***/dags/bad-data/data_part_1.csv
+[2024-05-17T21:06:36.521+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-17T21:06:36.522+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T21:06:36.540+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T12:31:17.083416+00:00, execution_date=20240517T123117, start_date=20240517T210635, end_date=20240517T210636
+[2024-05-17T21:06:36.594+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-17T21:06:36.651+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T21:06:36.657+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
