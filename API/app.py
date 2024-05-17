@@ -8,7 +8,7 @@ import psycopg2
 from dotenv import load_dotenv
 from typing import List, Optional
 import os
-from datetime import datetime
+from datetime import datetime , timedelta
 # Load models and environment variables
 model = load('../model/model.joblib')
 imputer = load('../model/imputer.joblib')
@@ -67,9 +67,9 @@ def predict(input_data: List[PredictionInput]):
     return {"received_data": [item.dict() for item in input_data], "prediction": ["Bad quality" if pred == 0 else "Good quality" for pred in prediction_list]}
 
 class PastPredictionsQuery(BaseModel):
-    start_date: Optional[str] = None
-    end_date: Optional[str] = None
-    source: Optional[str] = None
+    start_date: Optional[str]
+    end_date: Optional[str]
+    source: Optional[str] = "all"
 
 @app.post('/get-past-predictions')
 def get_past_predictions(query: PastPredictionsQuery = Body(...)):
@@ -81,7 +81,7 @@ def get_past_predictions(query: PastPredictionsQuery = Body(...)):
             start_date = None
 
         if query.end_date:
-            end_date = datetime.strptime(query.end_date, "%Y-%m-%d")
+            end_date = datetime.strptime(query.end_date, "%Y-%m-%d") + timedelta(days=1) - timedelta(seconds=1)
         else:
             end_date = None
 
