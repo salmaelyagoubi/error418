@@ -1,0 +1,26 @@
+[2024-05-18T02:37:56.360+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T02:37:56.420+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.save_data_errors scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T02:37:56.448+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.save_data_errors scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T02:37:56.451+0000] {taskinstance.py:2306} INFO - Starting attempt 15 of 15
+[2024-05-18T02:37:56.489+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): save_data_errors> on 2024-05-17 00:00:00+00:00
+[2024-05-18T02:37:56.505+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4081) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-18T02:37:56.510+0000] {standard_task_runner.py:63} INFO - Started process 4110 to run task
+[2024-05-18T02:37:56.510+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'save_data_errors', 'scheduled__2024-05-17T00:00:00+00:00', '--job-id', '217', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpjzoh665d']
+[2024-05-18T02:37:56.512+0000] {standard_task_runner.py:91} INFO - Job 217: Subtask save_data_errors
+[2024-05-18T02:37:56.640+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.save_data_errors scheduled__2024-05-17T00:00:00+00:00 [running]> on host 5ee845ef4e45
+[2024-05-18T02:37:56.867+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='save_data_errors' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='15' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-17T00:00:00+00:00'
+[2024-05-18T02:37:56.869+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T02:37:56.903+0000] {warnings.py:110} WARNING - /opt/***/dags/data-ingestion-dag.py:294: DeprecationWarning: There is no current event loop
+  loop = asyncio.get_event_loop()
+
+[2024-05-18T02:37:57.128+0000] {logging_mixin.py:188} INFO - Database 'postgres' already exists.
+[2024-05-18T02:37:57.133+0000] {logging_mixin.py:188} INFO - Create table result: CREATE TABLE
+[2024-05-18T02:37:57.162+0000] {logging_mixin.py:188} INFO - An error occurred: string indices must be integers, not 'str'
+[2024-05-18T02:37:57.167+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-18T02:37:57.168+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T02:37:57.184+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=save_data_errors, run_id=scheduled__2024-05-17T00:00:00+00:00, execution_date=20240517T000000, start_date=20240518T023756, end_date=20240518T023757
+[2024-05-18T02:37:57.248+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-18T02:37:57.275+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-18T02:37:57.279+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

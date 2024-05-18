@@ -1,0 +1,22 @@
+[2024-05-18T01:26:17.377+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T01:26:17.425+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.save_file scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T01:26:17.439+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.save_file scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T01:26:17.442+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2024-05-18T01:26:17.460+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): save_file> on 2024-05-17 00:00:00+00:00
+[2024-05-18T01:26:17.470+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1098) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-18T01:26:17.472+0000] {standard_task_runner.py:63} INFO - Started process 1108 to run task
+[2024-05-18T01:26:17.472+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'save_file', 'scheduled__2024-05-17T00:00:00+00:00', '--job-id', '156', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmp43jfroww']
+[2024-05-18T01:26:17.473+0000] {standard_task_runner.py:91} INFO - Job 156: Subtask save_file
+[2024-05-18T01:26:17.547+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.save_file scheduled__2024-05-17T00:00:00+00:00 [running]> on host e512d0910ba5
+[2024-05-18T01:26:17.688+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='save_file' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-17T00:00:00+00:00'
+[2024-05-18T01:26:17.689+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T01:26:17.853+0000] {logging_mixin.py:188} INFO - Saved good data to /opt/***/dags/good-data/data_part_7.csv
+[2024-05-18T01:26:17.864+0000] {logging_mixin.py:188} INFO - Saved bad data to /opt/***/dags/bad-data/data_part_7.csv
+[2024-05-18T01:26:17.869+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-18T01:26:17.870+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T01:26:17.886+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=save_file, run_id=scheduled__2024-05-17T00:00:00+00:00, execution_date=20240517T000000, start_date=20240518T012617, end_date=20240518T012617
+[2024-05-18T01:26:17.929+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-18T01:26:17.958+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-18T01:26:17.961+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

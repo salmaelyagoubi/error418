@@ -1,0 +1,831 @@
+[2024-05-18T01:23:44.126+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T01:23:44.169+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T01:23:44.180+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T01:23:44.181+0000] {taskinstance.py:2306} INFO - Starting attempt 5 of 5
+[2024-05-18T01:23:44.201+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 00:00:00+00:00
+[2024-05-18T01:23:44.210+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=870) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-18T01:23:44.213+0000] {standard_task_runner.py:63} INFO - Started process 898 to run task
+[2024-05-18T01:23:44.212+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-17T00:00:00+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpyuil8bux']
+[2024-05-18T01:23:44.214+0000] {standard_task_runner.py:91} INFO - Job 150: Subtask validate_data
+[2024-05-18T01:23:44.277+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-17T00:00:00+00:00 [running]> on host e512d0910ba5
+[2024-05-18T01:23:44.385+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-17T00:00:00+00:00'
+[2024-05-18T01:23:44.387+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T01:23:44.416+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-18T01:23:44.417+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-18T01:23:44.435+0000] {logging_mixin.py:188} INFO - Data types after reading CSV:
+[2024-05-18T01:23:44.437+0000] {logging_mixin.py:188} INFO -  ph                 float64
+Hardness           float64
+Solids             float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           Int64
+dtype: object
+[2024-05-18T01:23:44.484+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-18T01:23:44.536+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-18T01:23:44.565+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-18T01:23:45.042+0000] {data_asset.py:541} INFO - 	29 expectation(s) included in expectation_suite.
+[2024-05-18T01:23:45.110+0000] {logging_mixin.py:188} INFO - validation_results: {
+  "success": false,
+  "results": [
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "ph",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 1,
+        "missing_percent": 25.0,
+        "unexpected_count": 1,
+        "unexpected_percent": 33.33333333333333,
+        "unexpected_percent_total": 25.0,
+        "unexpected_percent_nonmissing": 33.33333333333333,
+        "partial_unexpected_list": [
+          -8.099124189298397
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "ph"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 1,
+        "unexpected_percent": 25.0,
+        "unexpected_percent_total": 25.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "ph",
+          "min_value": -14.0,
+          "max_value": 14.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 1,
+        "missing_percent": 25.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Hardness",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Hardness"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Hardness",
+          "min_value": 0.0,
+          "max_value": 1000.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Solids",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Solids"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Solids",
+          "min_value": 0.0,
+          "max_value": 50000.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Chloramines",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Chloramines"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Chloramines",
+          "min_value": 0.0,
+          "max_value": 10.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Sulfate",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 2,
+        "missing_percent": 50.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Sulfate"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 2,
+        "unexpected_percent": 50.0,
+        "unexpected_percent_total": 50.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Sulfate",
+          "min_value": 0.0,
+          "max_value": 500.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 2,
+        "missing_percent": 50.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Conductivity",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Conductivity"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Conductivity",
+          "min_value": 0.0,
+          "max_value": 2000.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Organic_carbon"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "min_value": 0.0,
+          "max_value": 20.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Trihalomethanes"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "min_value": 0.0,
+          "max_value": 120.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Turbidity",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Turbidity"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Turbidity",
+          "min_value": 0.0,
+          "max_value": 10.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Potability"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "column": "Potability",
+          "value_set": [
+            0,
+            1
+          ]
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 4,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 1,
+        "unexpected_percent": 25.0,
+        "unexpected_percent_total": 25.0,
+        "unexpected_percent_nonmissing": 25.0,
+        "partial_unexpected_list": [
+          3
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    }
+  ],
+  "evaluation_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 29,
+    "successful_expectations": 25,
+    "unsuccessful_expectations": 4,
+    "success_percent": 86.20689655172413
+  },
+  "meta": {
+    "great_expectations_version": "0.18.13",
+    "expectation_suite_name": "ex_dyali",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-05-18T01:23:45.040834+00:00"
+    },
+    "batch_kwargs": {
+      "ge_batch_id": "44f60d7a-14b5-11ef-b0ab-0242c0a88003"
+    },
+    "batch_markers": {},
+    "batch_parameters": {},
+    "validation_time": "20240518T012345.040550Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.12"
+    }
+  }
+}
+[2024-05-18T01:23:45.156+0000] {logging_mixin.py:188} INFO - /opt/***/dags/raw-data/data_part_1.csv is bad data
+[2024-05-18T01:23:45.178+0000] {logging_mixin.py:188} INFO - Bad data saved at /opt/***/dags/bad-data/data_part_1.csv
+[2024-05-18T01:23:45.179+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-18T01:23:45.181+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T01:23:45.193+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-17T00:00:00+00:00, execution_date=20240517T000000, start_date=20240518T012344, end_date=20240518T012345
+[2024-05-18T01:23:45.232+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-18T01:23:45.269+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-18T01:23:45.273+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,904 @@
+[2024-05-18T02:37:39.962+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-18T02:37:40.001+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T02:37:40.013+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-17T00:00:00+00:00 [queued]>
+[2024-05-18T02:37:40.016+0000] {taskinstance.py:2306} INFO - Starting attempt 15 of 15
+[2024-05-18T02:37:40.034+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 00:00:00+00:00
+[2024-05-18T02:37:40.045+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4043) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-18T02:37:40.047+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'scheduled__2024-05-17T00:00:00+00:00', '--job-id', '215', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpx793qhyg']
+[2024-05-18T02:37:40.048+0000] {standard_task_runner.py:63} INFO - Started process 4065 to run task
+[2024-05-18T02:37:40.049+0000] {standard_task_runner.py:91} INFO - Job 215: Subtask validate_data
+[2024-05-18T02:37:40.110+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data scheduled__2024-05-17T00:00:00+00:00 [running]> on host 5ee845ef4e45
+[2024-05-18T02:37:40.216+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='15' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-17T00:00:00+00:00'
+[2024-05-18T02:37:40.217+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-18T02:37:40.244+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_8.csv
+[2024-05-18T02:37:40.245+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_8
+[2024-05-18T02:37:40.273+0000] {logging_mixin.py:188} INFO - Data types after reading CSV:
+[2024-05-18T02:37:40.276+0000] {logging_mixin.py:188} INFO -  ph                 float64
+Hardness           float64
+Chloramines        float64
+Sulfate            float64
+Conductivity       float64
+Organic_carbon     float64
+Trihalomethanes    float64
+Turbidity          float64
+Potability           Int64
+dtype: object
+[2024-05-18T02:37:40.316+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-18T02:37:40.369+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-18T02:37:40.398+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-18T02:37:40.832+0000] {data_asset.py:541} INFO - 	29 expectation(s) included in expectation_suite.
+[2024-05-18T02:37:40.927+0000] {logging_mixin.py:188} INFO - validation_results: {
+  "success": false,
+  "results": [
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "ph",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 48,
+        "unexpected_percent": 5.399325084364454,
+        "unexpected_percent_total": 5.399325084364454,
+        "unexpected_percent_nonmissing": 5.399325084364454,
+        "partial_unexpected_list": [
+          -3.0381309955932245,
+          -0.9448837817246308,
+          -6.344442326885185,
+          -2.776901320562965,
+          -9.04268151125567,
+          -2.1941265963550904,
+          -3.289109046332145,
+          -2.220635864081593,
+          -5.287169980202487,
+          -3.517209549858835,
+          -1.551462329666915,
+          -3.127084458866941,
+          -3.7421383128777936,
+          -1.0181507922613076,
+          -2.819379032979839,
+          -1.4433945652393216,
+          -8.040848570850526,
+          -0.7018349800612906,
+          -1.5784965129451152,
+          -2.1682708810801543
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "ph"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "ph",
+          "min_value": -14.0,
+          "max_value": 14.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 310,
+        "unexpected_percent": 34.87064116985377,
+        "unexpected_percent_total": 34.87064116985377,
+        "unexpected_percent_nonmissing": 34.87064116985377,
+        "partial_unexpected_list": [
+          20.26210110031603,
+          22.17785848096752,
+          17.380035097641546,
+          21.62946940459392,
+          22.783901469617188,
+          19.027079300335465,
+          14.999606662231352,
+          18.401153365465127,
+          16.849215539137,
+          21.660838948197863,
+          14.026429061969283,
+          20.152246687125743,
+          14.67684488878633,
+          23.655927685490266,
+          23.678584308639167,
+          17.95964229809009,
+          24.88565348271168,
+          34.57897291257403,
+          25.28163801876663,
+          18.99083658129504
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Hardness",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Hardness"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Hardness",
+          "min_value": 0.0,
+          "max_value": 1000.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Solids",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "KeyError: 'Solids'",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3791, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 152, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 181, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Solids'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 81, in inner_wrapper\n    series = data[column]\n             ~~~~^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/frame.py\", line 3893, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3798, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Solids'\n"
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Solids"
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "KeyError: 'Solids'",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3791, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 152, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 181, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Solids'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 81, in inner_wrapper\n    series = data[column]\n             ~~~~^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/frame.py\", line 3893, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3798, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Solids'\n"
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Solids",
+          "min_value": 0.0,
+          "max_value": 50000.0
+        },
+        "meta": {}
+      },
+      "result": {},
+      "meta": {},
+      "exception_info": {
+        "raised_exception": true,
+        "exception_message": "KeyError: 'Solids'",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3791, in get_loc\n    return self._engine.get_loc(casted_key)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"index.pyx\", line 152, in pandas._libs.index.IndexEngine.get_loc\n  File \"index.pyx\", line 181, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'Solids'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/data_asset/data_asset.py\", line 244, in wrapper\n    return_obj = func(self, **evaluation_args)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/great_expectations/dataset/pandas_dataset.py\", line 81, in inner_wrapper\n    series = data[column]\n             ~~~~^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/frame.py\", line 3893, in __getitem__\n    indexer = self.columns.get_loc(key)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/***/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 3798, in get_loc\n    raise KeyError(key) from err\nKeyError: 'Solids'\n"
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Chloramines",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Chloramines"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Chloramines",
+          "min_value": 0.0,
+          "max_value": 10.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 18,
+        "unexpected_percent": 2.0247469066366706,
+        "unexpected_percent_total": 2.0247469066366706,
+        "unexpected_percent_nonmissing": 2.0247469066366706,
+        "partial_unexpected_list": [
+          10.384573604233072,
+          10.13835986837925,
+          10.32035523288335,
+          11.334670626135567,
+          11.711834578390755,
+          10.83903457296894,
+          10.625020106016148,
+          10.401085330925309,
+          10.068432190699305,
+          10.771756567346314,
+          10.100463305474564,
+          11.215456449488803,
+          10.416449077277372,
+          10.478269688864058,
+          10.281613032854626,
+          10.59683099705607,
+          11.652015169014598,
+          10.218365547174848
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Sulfate",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 14,
+        "unexpected_percent": 1.574803149606299,
+        "unexpected_percent_total": 1.574803149606299,
+        "unexpected_percent_nonmissing": 1.574803149606299,
+        "partial_unexpected_list": [
+          -120.6661872720141,
+          -20.020134745420364,
+          -14.072293079621945,
+          -90.76097121405854,
+          -2.290978459224448,
+          -47.72203023437464,
+          -83.33927566281818,
+          -126.3382512821022,
+          -15.194892752685178,
+          -5.216289933610085,
+          -139.90355980009826,
+          -32.092900226011125,
+          -10.86573259988944,
+          -48.79966244577474
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Sulfate"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Sulfate",
+          "min_value": 0.0,
+          "max_value": 500.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 43,
+        "unexpected_percent": 4.83689538807649,
+        "unexpected_percent_total": 4.83689538807649,
+        "unexpected_percent_nonmissing": 4.83689538807649,
+        "partial_unexpected_list": [
+          526.5901654105123,
+          506.6176321147855,
+          632.0588043151752,
+          565.057834339049,
+          520.9764310185847,
+          647.4107086450033,
+          600.1301919519495,
+          509.9995537081864,
+          575.0308332434763,
+          548.9138032589415,
+          643.399055218051,
+          551.8901497282575,
+          581.6970455747814,
+          547.2419529708491,
+          -120.6661872720141,
+          583.0969451490218,
+          540.94905645377,
+          -20.020134745420364,
+          -14.072293079621945,
+          608.3170376588271
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Conductivity",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Conductivity"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Conductivity",
+          "min_value": 0.0,
+          "max_value": 2000.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Organic_carbon"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Organic_carbon",
+          "min_value": 0.0,
+          "max_value": 20.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 4,
+        "unexpected_percent": 0.44994375703037126,
+        "unexpected_percent_total": 0.44994375703037126,
+        "unexpected_percent_nonmissing": 0.44994375703037126,
+        "partial_unexpected_list": [
+          20.12481298192195,
+          20.256666908904144,
+          21.18345846338315,
+          20.076409275753456
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Trihalomethanes"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Trihalomethanes",
+          "min_value": 0.0,
+          "max_value": 120.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_match_regex",
+        "kwargs": {
+          "column": "Turbidity",
+          "regex": "^\\d*\\.?\\d*$"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Turbidity"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "column": "Turbidity",
+          "min_value": 0.0,
+          "max_value": 10.0
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "column": "Potability"
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    },
+    {
+      "success": true,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "column": "Potability",
+          "value_set": [
+            0,
+            1
+          ]
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 889,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_list": []
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    }
+  ],
+  "evaluation_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 29,
+    "successful_expectations": 20,
+    "unsuccessful_expectations": 9,
+    "success_percent": 68.96551724137932
+  },
+  "meta": {
+    "great_expectations_version": "0.18.13",
+    "expectation_suite_name": "ex_dyali",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-05-18T02:37:40.831511+00:00"
+    },
+    "batch_kwargs": {
+      "ge_batch_id": "98e6014c-14bf-11ef-be15-0242ac120003"
+    },
+    "batch_markers": {},
+    "batch_parameters": {},
+    "validation_time": "20240518T023740.831289Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.12"
+    }
+  }
+}
+[2024-05-18T02:37:40.978+0000] {logging_mixin.py:188} INFO - /opt/***/dags/raw-data/data_part_8.csv is bad data
+[2024-05-18T02:37:41.018+0000] {logging_mixin.py:188} INFO - Bad data saved at /opt/***/dags/bad-data/data_part_8.csv
+[2024-05-18T02:37:41.019+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-18T02:37:41.020+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-18T02:37:41.032+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=scheduled__2024-05-17T00:00:00+00:00, execution_date=20240517T000000, start_date=20240518T023740, end_date=20240518T023741
+[2024-05-18T02:37:41.067+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-18T02:37:41.103+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-18T02:37:41.108+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
