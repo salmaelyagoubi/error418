@@ -3,6 +3,201 @@
   "expectation_suite_name": "ex_dyali",
   "expectations": [
     {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "ph",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "ph"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "ph",
+        "min_value": -14.0,
+        "max_value": 14.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Hardness",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Hardness"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Hardness",
+        "min_value": 0.0,
+        "max_value": 1000.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Solids",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Solids"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Solids",
+        "min_value": 0.0,
+        "max_value": 50000.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Chloramines",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Chloramines"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Chloramines",
+        "min_value": 0.0,
+        "max_value": 10.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Sulfate",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Sulfate"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Sulfate",
+        "min_value": 0.0,
+        "max_value": 500.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Conductivity",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Conductivity"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Conductivity",
+        "min_value": 0.0,
+        "max_value": 2000.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Organic_carbon",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Organic_carbon"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Organic_carbon",
+        "min_value": 0.0,
+        "max_value": 20.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Trihalomethanes",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Trihalomethanes"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Trihalomethanes",
+        "min_value": 0.0,
+        "max_value": 120.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "Turbidity",
+        "regex": "^\\d*\\.?\\d*$"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Turbidity"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Turbidity",
+        "min_value": 0.0,
+        "max_value": 10.0
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Potability"
+      }
+    },
+    {
       "expectation_type": "expect_column_values_to_be_in_set",
       "kwargs": {
         "column": "Potability",

@@ -1,0 +1,105 @@
+[2024-05-17T23:49:39.731+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-17T23:49:39.776+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T23:49:39.790+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [queued]>
+[2024-05-17T23:49:39.793+0000] {taskinstance.py:2306} INFO - Starting attempt 44 of 44
+[2024-05-17T23:49:39.812+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_data> on 2024-05-17 12:31:17.083416+00:00
+[2024-05-17T23:49:39.823+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=21760) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-17T23:49:39.826+0000] {standard_task_runner.py:63} INFO - Started process 21774 to run task
+[2024-05-17T23:49:39.827+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_pipelines_2', 'validate_data', 'manual__2024-05-17T12:31:17.083416+00:00', '--job-id', '116', '--raw', '--subdir', 'DAGS_FOLDER/data-ingestion-dag.py', '--cfg-path', '/tmp/tmpk59m_8s3']
+[2024-05-17T23:49:39.829+0000] {standard_task_runner.py:91} INFO - Job 116: Subtask validate_data
+[2024-05-17T23:49:39.907+0000] {task_command.py:426} INFO - Running <TaskInstance: data_ingestion_pipelines_2.validate_data manual__2024-05-17T12:31:17.083416+00:00 [running]> on host e512d0910ba5
+[2024-05-17T23:49:40.064+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_pipelines_2' AIRFLOW_CTX_TASK_ID='validate_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-17T12:31:17.083416+00:00' AIRFLOW_CTX_TRY_NUMBER='44' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-17T12:31:17.083416+00:00'
+[2024-05-17T23:49:40.066+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-17T23:49:40.107+0000] {logging_mixin.py:188} INFO - file_path in validate_data is  /opt/***/dags/raw-data/data_part_1.csv
+[2024-05-17T23:49:40.108+0000] {logging_mixin.py:188} INFO - data_asset_name is  data_part_1
+[2024-05-17T23:49:40.209+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/great_expectations/data_context/data_context/base_data_context.py:158: DeprecationWarning: DataContext and BaseDataContext are deprecated as of v0.17.10 and will be removed in v0.20. Please use gx.get_context instead.
+  warnings.warn(
+
+[2024-05-17T23:49:40.294+0000] {file_data_context.py:222} INFO - FileDataContext loading fluent config
+[2024-05-17T23:49:40.331+0000] {config.py:187} INFO - Loading 'datasources' ->
+[]
+[2024-05-17T23:49:40.872+0000] {data_asset.py:541} INFO - 	1 expectation(s) included in expectation_suite.
+[2024-05-17T23:49:40.886+0000] {logging_mixin.py:188} INFO - validation_results: {
+  "success": false,
+  "results": [
+    {
+      "success": false,
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "column": "Potability",
+          "value_set": [
+            "0",
+            "1"
+          ]
+        },
+        "meta": {}
+      },
+      "result": {
+        "element_count": 14,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_count": 14,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_total": 100.0,
+        "unexpected_percent_nonmissing": 100.0,
+        "partial_unexpected_list": [
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          3.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "meta": {},
+      "exception_info": {
+        "raised_exception": false,
+        "exception_message": null,
+        "exception_traceback": null
+      }
+    }
+  ],
+  "evaluation_parameters": {},
+  "statistics": {
+    "evaluated_expectations": 1,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 1,
+    "success_percent": 0.0
+  },
+  "meta": {
+    "great_expectations_version": "0.18.13",
+    "expectation_suite_name": "ex_dyali",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-05-17T23:49:40.871785+00:00"
+    },
+    "batch_kwargs": {
+      "ge_batch_id": "20c5e02c-14a8-11ef-a862-0242c0a88003"
+    },
+    "batch_markers": {},
+    "batch_parameters": {},
+    "validation_time": "20240517T234940.871355Z",
+    "expectation_suite_meta": {
+      "great_expectations_version": "0.18.12"
+    }
+  }
+}
+[2024-05-17T23:49:40.926+0000] {logging_mixin.py:188} INFO - /opt/***/dags/raw-data/data_part_1.csv is bad data
+[2024-05-17T23:49:40.957+0000] {logging_mixin.py:188} INFO - Bad data saved at /opt/***/dags/bad-data/data_part_1.csv
+[2024-05-17T23:49:40.958+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-17T23:49:40.958+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-17T23:49:40.976+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_ingestion_pipelines_2, task_id=validate_data, run_id=manual__2024-05-17T12:31:17.083416+00:00, execution_date=20240517T123117, start_date=20240517T234939, end_date=20240517T234940
+[2024-05-17T23:49:41.046+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-17T23:49:41.101+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-17T23:49:41.104+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

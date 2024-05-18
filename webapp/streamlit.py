@@ -2,7 +2,7 @@ import webapp.streamlit as st
 import pandas as pd
 import requests
 import numpy as np
-from datetime import datetime
+from datetime import datetime 
 
 # Set page configuration
 st.set_page_config(
@@ -13,9 +13,13 @@ st.set_page_config(
 )
 
 # Function to make predictions using the API
-def make_prediction(api_url, input_data):
+def make_prediction(api_url, input_data, source):
     try:
-        response = requests.post(api_url, json=input_data)
+        payload = {
+            "input_data": input_data,
+            "source": source
+        }
+        response = requests.post(api_url, json=payload)
         if response.status_code == 200:
             return response.json()
         else:
@@ -24,7 +28,19 @@ def make_prediction(api_url, input_data):
         st.error("Could not connect to the server. Please make sure the API server is running.")
     return None
 
-# Prediction Page for both single and multiple predictions
+
+# Function to retrieve past predictions using the API
+def get_past_predictions(api_url, payload):
+    try:
+        response = requests.post(api_url, json=payload)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            st.error("Failed to get past predictions from the server. Status Code: " + str(response.status_code))
+    except requests.exceptions.ConnectionError:
+        st.error("Could not connect to the server. Please make sure the API server is running.")
+    return None
+
 def prediction_page():
     st.title("Make Water Quality Predictions")
 
@@ -46,7 +62,7 @@ def prediction_page():
         submit_single = st.form_submit_button("Predict Single Sample")
 
     if submit_single:
-        single_prediction = make_prediction("http://127.0.0.1:8000/predict", [input_data])
+        single_prediction = make_prediction("http://127.0.0.1:8000/predict", [input_data], "webapp")
         if single_prediction:
             st.success("Single prediction received from the backend.")
             result_df = pd.DataFrame([input_data], index=['Input Data'])
@@ -61,7 +77,7 @@ def prediction_page():
         data.fillna(0, inplace=True)  # Clean the data
         data.replace([np.inf, -np.inf], 0, inplace=True)
         if st.button("Predict Multiple Samples"):
-            multiple_predictions = make_prediction("http://127.0.0.1:8000/predict", data.to_dict(orient='records'))
+            multiple_predictions = make_prediction("http://127.0.0.1:8000/predict", data.to_dict(orient='records'), "scheduled")
             if multiple_predictions:
                 st.success("Multiple predictions received from the backend.")
                 results_df = pd.DataFrame(multiple_predictions['prediction'], columns=['Result'])
@@ -85,11 +101,12 @@ def past_predictions_page():
             "end_date": end_date.strftime("%Y-%m-%d"),
             "source": prediction_source
         }
-        past_predictions = make_prediction("http://127.0.0.1:8000/get-past-predictions", payload)
+        past_predictions = get_past_predictions("http://127.0.0.1:8000/get-past-predictions", payload)
         if past_predictions:
             st.success("Past predictions received from the backend.")
             past_predictions_df = pd.DataFrame(past_predictions)
             st.dataframe(past_predictions_df)
+
 
 
 st.sidebar.title("Navigation 💧")

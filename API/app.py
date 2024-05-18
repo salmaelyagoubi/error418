@@ -8,7 +8,8 @@ import psycopg2
 from dotenv import load_dotenv
 from typing import List, Optional
 import os
-from datetime import datetime , timedelta
+from datetime import datetime, timedelta
+
 # Load models and environment variables
 model = load('../model/model.joblib')
 imputer = load('../model/imputer.joblib')
@@ -24,7 +25,7 @@ conn = psycopg2.connect(
 )
 cursor = conn.cursor()
 
-# Ensure predictions table exists with timestamp column
+# Ensure predictions table exists with timestamp column and source column
 create_table_query = """
 CREATE TABLE IF NOT EXISTS predictions (
     id SERIAL PRIMARY KEY,
@@ -35,6 +36,18 @@ CREATE TABLE IF NOT EXISTS predictions (
 );
 """
 cursor.execute(create_table_query)
+
+# Ensure the source column exists in case the table was created earlier without it
+alter_table_query = """
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                   WHERE table_name='predictions' AND column_name='source') THEN
+        ALTER TABLE predictions ADD COLUMN source VARCHAR(255);
+    END IF;
+END $$;
+"""
+cursor.execute(alter_table_query)
 conn.commit()
 
 app = FastAPI()
@@ -50,21 +63,25 @@ class PredictionInput(BaseModel):
     Trihalomethanes: float
     Turbidity: float
 
+class PredictRequest(BaseModel):
+    input_data: List[PredictionInput]
+    source: str
+
 @app.post('/predict')
-def predict(input_data: List[PredictionInput]):
-    input_df = pd.DataFrame([item.dict() for item in input_data])
+def predict(request: PredictRequest):
+    input_df = pd.DataFrame([item.dict() for item in request.input_data])
     input_imputed = imputer.transform(input_df)
     prediction = model.predict(input_imputed)
     prediction_list = prediction.tolist()
 
-    # Insert predictions along with the timestamp
-    for idx, input_item in enumerate(input_data):
+    # Insert predictions along with the timestamp and source
+    for idx, input_item in enumerate(request.input_data):
         input_features_json = json.dumps(input_item.dict())
-        insert_query = "INSERT INTO predictions (input_features, prediction) VALUES (%s, %s)"
-        cursor.execute(insert_query, (input_features_json, prediction_list[idx]))
+        insert_query = "INSERT INTO predictions (input_features, prediction, source) VALUES (%s, %s, %s)"
+        cursor.execute(insert_query, (input_features_json, prediction_list[idx], request.source))
     conn.commit()
 
-    return {"received_data": [item.dict() for item in input_data], "prediction": ["Bad quality" if pred == 0 else "Good quality" for pred in prediction_list]}
+    return {"received_data": [item.dict() for item in request.input_data], "prediction": ["Bad quality" if pred == 0 else "Good quality" for pred in prediction_list]}
 
 class PastPredictionsQuery(BaseModel):
     start_date: Optional[str]
@@ -100,7 +117,7 @@ def get_past_predictions(query: PastPredictionsQuery = Body(...)):
             query_params.append(end_date)
 
         if query.source and query.source != "all":
-            select_query += " AND input_features->>'source' = %s"
+            select_query += " AND source = %s"
             query_params.append(query.source)
 
         cursor.execute(select_query, query_params)
@@ -112,10 +129,11 @@ def get_past_predictions(query: PastPredictionsQuery = Body(...)):
             past_predictions_list.append({
                 "input_features": prediction[1],
                 "prediction": "Bad quality" if prediction[2] == 0 else "Good quality",
-                "timestamp": timestamp 
+                "timestamp": timestamp,
+                "source": prediction[4]
             })
 
         return past_predictions_list
 
     except ValueError as e:
-        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD.") from e
+        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD.") from e 
